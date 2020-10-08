@@ -10,15 +10,15 @@ lines=f.readlines()
 column=[]
 for line in lines:
 	words=line.split()
-	atomserial=int(words[1]),str(words[2]),str(words[3]),str(words[4]),int(words[5]),float(words[6]),float(words[7]),float(words[8]),float(words[9]),float(words[10]),str(words[11])
-	column.append(atomserial)
-
+	atominfo=int(words[1]),str(words[2]),str(words[3]),str(words[4]),int(words[5]),float(words[6]),float(words[7]),float(words[8]),float(words[9]),float(words[10]),str(words[11])
+	print("ATOM",atominfo)
+	column.append(atominfo)
 f.close()
 
 
 f=open("hw.out",'w')
 for temp in column:
-	s="Atom {0}\n"
+	s="ATOM {0}\n"
 	f.write(s.format(temp))
 f.close()
 
