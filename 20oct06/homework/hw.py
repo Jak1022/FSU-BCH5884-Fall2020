@@ -16,7 +16,7 @@ for line in lines:
 f.close()
 
 
-f=open("tmp2.out",'w')
+f=open("hw.out",'w')
 for temp in column:
 	s="Atom {0}\n"
 	f.write(s.format(temp))
