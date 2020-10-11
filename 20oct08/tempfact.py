@@ -9,10 +9,12 @@ lines=f.readlines()
 
 tmplist=[]
 for line in lines:
-	words=line.split()
-	tempfact=float(words[10])
-	print (tempfact)
-	tmplist.append(tempfact)
+	if line[:4]=="ATOM" or line[:6]=="HETATM":
+		words=line.split()
+		#tempfact=float(words[10])
+		tempfact=float(line[60:66])
+		print (tempfact)
+		tmplist.append(tempfact)
 f.close()
 
 f=open("tmp.out",'w')

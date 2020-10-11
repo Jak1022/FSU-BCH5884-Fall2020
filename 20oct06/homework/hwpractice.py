@@ -9,7 +9,7 @@ lines=f.readlines()
 column=[]
 for line in lines:
 	words=line.split()
-	atomserial=str(words[1])
+	atomserial=str(words[0]),str(words[1]),str(words[2]),str(words[3]),str(words[4])
 	atomname=str(words[2])
 	residuename=str(words[3])
 	chainID=str(words[4])
@@ -20,7 +20,7 @@ for line in lines:
 	occupancy=float(words[9])
 	tempfact=float((words[10]))
 	element=str(words[11])
-	print("Atom",atomserial,atomname,residuename,chainID,residuenumber,xcoordinate,ycoordinate,zcoordinate,occupancy,tempfact,element)
+	#print("Atom",atomserial,atomname,residuename,chainID,residuenumber,xcoordinate,ycoordinate,zcoordinate,occupancy,tempfact,element)
 	column.append(atomserial)
 	#column.append(atomname)
 	#column.append(residuename)
@@ -38,9 +38,8 @@ f.close()
 
 f=open("tmp.out",'w')
 for atominfo in column:
-	s="Atom is {}\n"
-	f.write(s.format(atominfo))
+	s="{0:6} {1:5} {2:4} {3:3} {4:1}\n"
+	f.write(s.format(atominfo[0],atominfo[1],atominfo[2],atominfo[3],atominfo[4]))
 f.close()
-
 
 print("Done!")
