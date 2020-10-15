@@ -61,12 +61,13 @@ for line in lines:
 
 
 # STEP 2: calculation for center mass coordinates
-# center mass coordinates = sum (coordinates * mass) / sum (mass)
 
 summass=0
 sumxmass=0
 sumymass=0
 sumzmass=0
+
+# calculate sum (coordinates*mass)
 
 for record in records:
 	summass+=record[12]
@@ -74,12 +75,15 @@ for record in records:
 	sumymass+=record[12]*record[7]
 	sumzmass+=record[12]*record[8]
 
+# calculate center mass coordinates, where center mass coordinates = sum (coordinates * mass) / sum (mass)
+
 cmx=sumxmass/summass
 cmy=sumymass/summass
 cmz=sumzmass/summass
 
 
-# STEP 3: create a new textfile (pdbfile); write data to the new file; the new coordinates = original coordinates - center mass coordinates
+# STEP 3: create a new textfile (pdbfile); write data to the new file 
+# When writing data to the new file, the new coordinates = original coordinates - center mass coordinates
 
 f=open("project01out.pdb",'w')
 for atom in records:
