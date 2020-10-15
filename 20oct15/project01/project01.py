@@ -79,7 +79,7 @@ cmy=sumymass/summass
 cmz=sumzmass/summass
 
 
-# STEP 3: create a new textfile (pdbfile), and write data.
+# STEP 3: create a new textfile (pdbfile); write data to the new file; the new coordinates = original coordinates - center mass coordinates
 
 f=open("project01out.pdb",'w')
 for atom in records:
