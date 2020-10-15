@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # Created by Yudan Chen for BCH5884 Project 1
-# Github link:
+# Github link: https://github.com/Jak1022/FSU-BCH5884-Fall2020/blob/master/20oct15/project01/project01.py
 
 import sys
 import math
@@ -61,6 +61,7 @@ for line in lines:
 
 
 # STEP 2: calculation for center mass coordinates
+# center mass coordinates = sum (coordinates * mass) / sum (mass)
 
 summass=0
 sumxmass=0
